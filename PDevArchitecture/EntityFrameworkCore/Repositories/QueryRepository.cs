@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PDevArchitecture.Core.Entities.Abstracts;
 using PDevArchitecture.Core.Repositories.Abstracts;
-using PDevArchitecture.EntityFramework.DataAccess;
-using PDevArchitecture.EntityFramework.Repositories.Interfaces;
+using PDevArchitecture.EntityFrameworkCore.DataAccess;
+using PDevArchitecture.EntityFrameworkCore.Repositories.Interfaces;
 
-namespace PDevArchitecture.EntityFramework.Repositories
+namespace PDevArchitecture.EntityFrameworkCore.Repositories
 {
     public class QueryRepository<TEntity, TPrimary> : RepositoryCore<TEntity, TPrimary>,
         IQueryRepository<TEntity, TPrimary>

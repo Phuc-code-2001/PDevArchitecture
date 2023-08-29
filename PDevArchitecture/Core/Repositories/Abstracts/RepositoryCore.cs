@@ -1,5 +1,5 @@
 ﻿using PDevArchitecture.Core.Entities.Abstracts;
-using PDevArchitecture.EntityFramework.DataAccess;
+using PDevArchitecture.EntityFrameworkCore.DataAccess;
 
 namespace PDevArchitecture.Core.Repositories.Abstracts
 {

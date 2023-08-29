@@ -1,7 +1,7 @@
-﻿using PDevArchitecture.EntityFramework.Repositories;
-using PDevArchitecture.EntityFramework.Repositories.Interfaces;
+﻿using PDevArchitecture.EntityFrameworkCore.Repositories;
+using PDevArchitecture.EntityFrameworkCore.Repositories.Interfaces;
 
-namespace PDevArchitecture.EntityFramework
+namespace PDevArchitecture.EntityFrameworkCore
 {
     public static class ConfigureServices
     {

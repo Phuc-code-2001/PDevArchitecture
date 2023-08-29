@@ -3,10 +3,10 @@ using PDevArchitecture.Application.Shared.Consts;
 using PDevArchitecture.Application.Shared.Exceptions;
 using PDevArchitecture.Core.Entities.Abstracts;
 using PDevArchitecture.Core.Repositories.Abstracts;
-using PDevArchitecture.EntityFramework.DataAccess;
-using PDevArchitecture.EntityFramework.Repositories.Interfaces;
+using PDevArchitecture.EntityFrameworkCore.DataAccess;
+using PDevArchitecture.EntityFrameworkCore.Repositories.Interfaces;
 
-namespace PDevArchitecture.EntityFramework.Repositories
+namespace PDevArchitecture.EntityFrameworkCore.Repositories
 {
     public class CommandRepository<TEntity, TPrimary> : RepositoryCore<TEntity, TPrimary>,
         ICommandRepository<TEntity, TPrimary>

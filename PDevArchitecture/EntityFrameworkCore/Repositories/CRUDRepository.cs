@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PDevArchitecture.Core.Entities.Abstracts;
-using PDevArchitecture.EntityFramework.Repositories.Interfaces;
+using PDevArchitecture.EntityFrameworkCore.Repositories.Interfaces;
 
-namespace PDevArchitecture.EntityFramework.Repositories
+namespace PDevArchitecture.EntityFrameworkCore.Repositories
 {
     public class CRUDRepository<TEntity, TPrimary> :
         ICRUDRepository<TEntity, TPrimary>

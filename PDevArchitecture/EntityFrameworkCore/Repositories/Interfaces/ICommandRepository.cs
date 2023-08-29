@@ -1,7 +1,7 @@
 ﻿using PDevArchitecture.Core.Entities.Abstracts;
 using PDevArchitecture.Core.Repositories.Interfaces;
 
-namespace PDevArchitecture.EntityFramework.Repositories.Interfaces
+namespace PDevArchitecture.EntityFrameworkCore.Repositories.Interfaces
 {
     public interface ICommandRepository<TEntity, TPrimary> :
         IHasCreateRepository<TEntity>,

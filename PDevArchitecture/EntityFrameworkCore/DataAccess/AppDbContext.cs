@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PDevArchitecture.EntityFramework.Entities;
 
-namespace PDevArchitecture.EntityFramework.DataAccess
+namespace PDevArchitecture.EntityFrameworkCore.DataAccess
 {
     public class AppDbContext : DbContext
     {
@@ -10,7 +9,6 @@ namespace PDevArchitecture.EntityFramework.DataAccess
 
         }
 
-        public DbSet<Employee>? Employees { get; set; }
 
 
     }

@@ -1,6 +1,6 @@
 ﻿using PDevArchitecture.Core.Entities.Abstracts;
 
-namespace PDevArchitecture.EntityFramework.Repositories.Interfaces
+namespace PDevArchitecture.EntityFrameworkCore.Repositories.Interfaces
 {
     public interface ICRUDRepository<TEntity, TPrimary> :
         IQueryRepository<TEntity, TPrimary>,

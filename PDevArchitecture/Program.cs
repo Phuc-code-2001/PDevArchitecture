@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using PDevArchitecture.Application.Interceptors;
-using PDevArchitecture.EntityFramework;
-using PDevArchitecture.EntityFramework.DataAccess;
+using PDevArchitecture.EntityFrameworkCore;
+using PDevArchitecture.EntityFrameworkCore.DataAccess;
 
 namespace PDevArchitecture
 {

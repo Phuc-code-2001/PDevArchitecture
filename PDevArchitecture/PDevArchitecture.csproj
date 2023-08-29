@@ -17,9 +17,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Application\Services\" />
     <Folder Include="Application\Shared\Interfaces\Services\" />
+    <Folder Include="Controllers\" />
     <Folder Include="Core\Enums\" />
     <Folder Include="Core\Helpers\" />
+    <Folder Include="EntityFrameworkCore\Entities\" />
   </ItemGroup>
 
 </Project>
