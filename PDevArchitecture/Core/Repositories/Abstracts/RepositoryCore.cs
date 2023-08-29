@@ -3,8 +3,7 @@ using PDevArchitecture.EntityFrameworkCore.DataAccess;
 
 namespace PDevArchitecture.Core.Repositories.Abstracts
 {
-    public abstract class RepositoryCore<TEntity, TPrimary>
-        where TEntity : Entity<TPrimary>
+    public abstract class RepositoryCore
     {
         protected readonly IConfiguration _configuration;
         protected readonly AppDbContext _dbContext;

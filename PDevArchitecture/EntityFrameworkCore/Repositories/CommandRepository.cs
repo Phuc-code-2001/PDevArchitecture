@@ -8,7 +8,7 @@ using PDevArchitecture.EntityFrameworkCore.Repositories.Interfaces;
 
 namespace PDevArchitecture.EntityFrameworkCore.Repositories
 {
-    public class CommandRepository<TEntity, TPrimary> : RepositoryCore<TEntity, TPrimary>,
+    public class CommandRepository<TEntity, TPrimary> : RepositoryCore,
         ICommandRepository<TEntity, TPrimary>
         where TEntity : BaseEntity<TPrimary>
 
