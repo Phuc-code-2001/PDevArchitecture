@@ -3,12 +3,9 @@ using PDevArchitecture.Core.Repositories.Interfaces;
 
 namespace PDevArchitecture.EntityFrameworkCore.Repositories.Interfaces
 {
-    public interface ICommandRepository<TEntity, TPrimary> :
-        IHasCreateRepository<TEntity>,
-        IHasUpdateRepository<TEntity>,
-        IHasDeleteRepository<TEntity>
+    public interface IEfCoreRepository<TEntity, TPrimary> : IRepositoryCore<TEntity, TPrimary>
         where TEntity : BaseEntity<TPrimary>
     {
-
+        Task<TResult> HandleTransaction<TResult>(Func<IQueryable<TEntity>, TResult> handler);
     }
 }

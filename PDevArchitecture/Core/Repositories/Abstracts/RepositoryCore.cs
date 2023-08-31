@@ -1,19 +1,22 @@
 ﻿using PDevArchitecture.Core.Entities.Abstracts;
+using PDevArchitecture.Core.Repositories.Interfaces;
 using PDevArchitecture.EntityFrameworkCore.DataAccess;
 
 namespace PDevArchitecture.Core.Repositories.Abstracts
 {
-    public abstract class RepositoryCore
+    public abstract class RepositoryCore<TEntity, TPrimary> : IRepositoryCore<TEntity, TPrimary>
+        where TEntity : BaseEntity<TPrimary>
     {
-        protected readonly IConfiguration _configuration;
         protected readonly AppDbContext _dbContext;
 
-        public RepositoryCore(AppDbContext dbContext, IConfiguration configuration)
+        public RepositoryCore(AppDbContext dbContext)
         {
             _dbContext = dbContext;
-            _configuration = configuration;
         }
 
-
+        public async Task<IQueryable<TEntity>> GetAsQueryable()
+        {
+            return await Task.FromResult(_dbContext.Set<TEntity>());
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PDevArchitecture.Demonstrations.Entities;
 
 namespace PDevArchitecture.EntityFrameworkCore.DataAccess
 {
@@ -9,7 +10,7 @@ namespace PDevArchitecture.EntityFrameworkCore.DataAccess
 
         }
 
-
+        DbSet<Book>? Books { get; set; }
 
     }
 }

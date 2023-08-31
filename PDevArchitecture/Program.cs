@@ -29,6 +29,7 @@ namespace PDevArchitecture
                 {
                     options.InvalidModelStateResponseFactory = new InvalidModelStateResponseFactoryBehavior().Handler;
                 });
+            builder.Services.AddControllersWithViews();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 

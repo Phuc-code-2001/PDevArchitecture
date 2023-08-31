@@ -7,10 +7,8 @@ namespace PDevArchitecture.EntityFrameworkCore
     {
         public static IServiceCollection AddRepositoryCore(this IServiceCollection services)
         {
-            services.AddScoped(typeof(IQueryRepository<,>), typeof(QueryRepository<,>));
-            services.AddScoped(typeof(ICommandRepository<,>), typeof(CommandRepository<,>));
-            services.AddScoped(typeof(ICRUDRepository<,>), typeof(CRUDRepository<,>));
 
+            services.AddScoped(typeof(IEfCoreRepository<,>), typeof(EfCoreRepository<,>));
             return services;
         }
     }
