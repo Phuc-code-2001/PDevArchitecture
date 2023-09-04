@@ -1,4 +1,6 @@
-﻿using PDevArchitecture.Core.Entities.Abstracts;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
+using PDevArchitecture.Core.Entities.Abstracts;
 using PDevArchitecture.Core.Repositories.Interfaces;
 using PDevArchitecture.EntityFrameworkCore.DataAccess;
 
@@ -13,10 +15,10 @@ namespace PDevArchitecture.Core.Repositories.Abstracts
         {
             _dbContext = dbContext;
         }
+        
+        public DbContext DbContext => _dbContext;
+        public DbSet<TEntity> EntitySet => _dbContext.Set<TEntity>();
 
-        public async Task<IQueryable<TEntity>> GetAsQueryable()
-        {
-            return await Task.FromResult(_dbContext.Set<TEntity>());
-        }
+  
     }
 }

@@ -7,7 +7,6 @@ namespace PDevArchitecture.EntityFrameworkCore
     {
         public static IServiceCollection AddRepositoryCore(this IServiceCollection services)
         {
-
             services.AddScoped(typeof(IEfCoreRepository<,>), typeof(EfCoreRepository<,>));
             return services;
         }

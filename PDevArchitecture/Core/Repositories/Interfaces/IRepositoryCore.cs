@@ -1,10 +1,14 @@
-﻿using PDevArchitecture.Core.Entities.Abstracts;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
+using PDevArchitecture.Core.Entities.Abstracts;
 
 namespace PDevArchitecture.Core.Repositories.Interfaces
 {
-    public interface IRepositoryCore<TEntity, TPrimary>
+    public interface IRepositoryCore<TEntity, TPrimary> : IRepository
         where TEntity : BaseEntity<TPrimary>
     {
-        Task<IQueryable<TEntity>> GetAsQueryable();
+        DbContext DbContext {  get; }
+        DbSet<TEntity> EntitySet { get; }
+
     }
 }

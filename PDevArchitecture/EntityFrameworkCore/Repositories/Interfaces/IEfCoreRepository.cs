@@ -1,11 +1,14 @@
 ﻿using PDevArchitecture.Core.Entities.Abstracts;
+using PDevArchitecture.Core.Repositories.Abstracts;
 using PDevArchitecture.Core.Repositories.Interfaces;
+using System.Linq.Expressions;
 
 namespace PDevArchitecture.EntityFrameworkCore.Repositories.Interfaces
 {
-    public interface IEfCoreRepository<TEntity, TPrimary> : IRepositoryCore<TEntity, TPrimary>
+    public interface IEfCoreRepository<TEntity, TPrimary> 
+        : IRepositoryCore<TEntity, TPrimary>
         where TEntity : BaseEntity<TPrimary>
     {
-        Task<TResult> HandleTransaction<TResult>(Func<IQueryable<TEntity>, TResult> handler);
+        IQueryable<TEntity> GetAsQueryable(bool tracked = true);
     }
 }

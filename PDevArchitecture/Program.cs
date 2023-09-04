@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using PDevArchitecture.Application.Interceptors;
+using PDevArchitecture.Application.Mappers;
 using PDevArchitecture.EntityFrameworkCore;
 using PDevArchitecture.EntityFrameworkCore.DataAccess;
 
@@ -14,6 +15,7 @@ namespace PDevArchitecture
 
             // Add services to the container.
             builder.Services.AddAutoMapper(assemblies);
+            builder.Services.AddHelperMapppingService();
             builder.Services.AddRepositoryCore();
             builder.Services.AddLogging();
 

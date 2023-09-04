@@ -1,4 +1,5 @@
-﻿using PDevArchitecture.Application.Shared.Consts;
+﻿using Microsoft.EntityFrameworkCore;
+using PDevArchitecture.Application.Shared.Consts;
 using PDevArchitecture.Application.Shared.Exceptions;
 using PDevArchitecture.Core.Entities.Abstracts;
 using PDevArchitecture.Core.Repositories.Abstracts;
@@ -13,32 +14,14 @@ namespace PDevArchitecture.EntityFrameworkCore.Repositories
         where TEntity : BaseEntity<TPrimary>
     {
 
-        private readonly ILogger _logger;
-
-        public EfCoreRepository(AppDbContext dbContext, ILogger logger) : base(dbContext)
+        public EfCoreRepository(AppDbContext dbContext) : base(dbContext)
         {
-            _logger = logger;
+
         }
 
-        public async Task<TResult> HandleTransaction<TResult>(Func<IQueryable<TEntity>, TResult> handler)
+        public IQueryable<TEntity> GetAsQueryable(bool tracked = true)
         {
-            using(var transaction = _dbContext.Database.BeginTransaction())
-            {
-                try
-                {
-                    var queyable = await GetAsQueryable();
-                    return handler(queyable);
-                }
-                catch(Exception ex)
-                {
-                    _logger.LogError(ex.Message, ex);
-                    transaction.Rollback();
-                    throw new HttpException()
-                        .WithStatusCode(500)
-                        .WithUserFriendlyMessage(HttpMessageConsts.ServerInternalError);
-                }
-            }
-
+            return tracked ? EntitySet : EntitySet.AsNoTracking();
         }
     }
 }

@@ -1,9 +1,8 @@
 ﻿namespace PDevArchitecture.Application.Shared.Interfaces.Paging
 {
-    public interface IPagingResult<T>
+    public interface IPagingResult
     {
-        List<T> Items { get; set; }
+        object Items { get; set; }
         long TotalCount { get; set; }
-
     }
 }

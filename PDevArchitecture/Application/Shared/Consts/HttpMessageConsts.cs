@@ -2,6 +2,7 @@
 {
     public static class HttpMessageConsts
     {
+        public const string UnExpectedError = "Something went wrong!";
         public const string ServerInternalError = "Server Internal Error";
         public const string GetListSucceeded = "Get List Successfully.";
         public const string CreateSucceeded = "Create Successfully.";

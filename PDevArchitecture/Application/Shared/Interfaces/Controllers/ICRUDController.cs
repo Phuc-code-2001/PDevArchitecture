@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PDevArchitecture.Application.Shared.Interfaces.Filters;
+using PDevArchitecture.Core.Entities.Abstracts;
 
 namespace PDevArchitecture.Application.Shared.Interfaces.Controllers
 {
